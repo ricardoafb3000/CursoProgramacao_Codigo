@@ -83,7 +83,7 @@ SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM Cad
               <Mapping SourceColumn="Set_DtExc" DataSetColumn="Set_DtExc" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Deletar" Modifier="Public" Name="Deletar" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Deletar">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Cad_Setores] WHERE [Set_ID] = @Original_Set_ID</CommandText>
@@ -104,7 +104,7 @@ WHERE Set_ID = @Set_ID</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="CursoProgramacao.dbo.Cad_Setores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNome" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNome" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillByNome">
+              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="CursoProgramacao.dbo.Cad_Setores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNome" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNome" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByNome">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM dbo.Cad_Setores
@@ -115,7 +115,7 @@ WHERE Set_Nome = @Set_Nome </CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="CursoProgramacao.dbo.Cad_Setores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNomeNaoEsteID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNomeNaoEsteID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByNomeNaoEsteID">
+              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="CursoProgramacao.dbo.Cad_Setores" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNomeNaoEsteID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByNomeNaoEsteID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByNomeNaoEsteID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM dbo.Cad_Setores
@@ -127,37 +127,6 @@ and Set_ID &lt;&gt; @Set_ID</CommandText>
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO [dbo].[Cad_Setores] ([Set_Nome], [Set_Descricao], [Set_DtInc], [Set_DtAlt], [Set_DtExc]) VALUES (@Set_Nome, @Set_Descricao, @Set_DtInc, @Set_DtAlt);
-SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM Cad_Setores WHERE (Set_ID = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_Nome" ColumnName="Set_Nome" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Set_Nome" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Set_Nome" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_Descricao" ColumnName="Set_Descricao" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@Set_Descricao" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Set_Descricao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_DtInc" ColumnName="Set_DtInc" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Set_DtInc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Set_DtInc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_DtAlt" ColumnName="Set_DtAlt" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Set_DtAlt" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Set_DtAlt" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-              </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>UPDATE [dbo].[Cad_Setores] SET [Set_Nome] = @Set_Nome, [Set_Descricao] = @Set_Descricao, [Set_DtInc] = @Set_DtInc, [Set_DtAlt] = @Set_DtAlt, [Set_DtExc] = @Set_DtExc 
-WHERE [Set_ID] = @Original_Set_ID
-</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_Set_ID" ColumnName="Set_ID" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_Set_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Set_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_Nome" ColumnName="Set_Nome" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Set_Nome" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Set_Nome" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_Descricao" ColumnName="Set_Descricao" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@Set_Descricao" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Set_Descricao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_DtInc" ColumnName="Set_DtInc" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Set_DtInc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Set_DtInc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_DtAlt" ColumnName="Set_DtAlt" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Set_DtAlt" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Set_DtAlt" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Set_DtExc" ColumnName="Set_DtExc" DataSourceName="CursoProgramacao.dbo.Cad_Setores" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Set_DtExc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Set_DtExc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -236,70 +205,7 @@ SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad
               <Mapping SourceColumn="Pro_DtAlt" DataSetColumn="Pro_DtAlt" />
               <Mapping SourceColumn="Pro_DtExc" DataSetColumn="Pro_DtExc" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>DELETE FROM [dbo].[Cad_Profissoes] WHERE (([Pro_ID] = @Original_Pro_ID) AND ((@IsNull_Pro_Nome = 1 AND [Pro_Nome] IS NULL) OR ([Pro_Nome] = @Original_Pro_Nome)) AND ((@IsNull_Pro_Descricao = 1 AND [Pro_Descricao] IS NULL) OR ([Pro_Descricao] = @Original_Pro_Descricao)) AND ((@IsNull_Pro_DtInc = 1 AND [Pro_DtInc] IS NULL) OR ([Pro_DtInc] = @Original_Pro_DtInc)) AND ((@IsNull_Pro_DtAlt = 1 AND [Pro_DtAlt] IS NULL) OR ([Pro_DtAlt] = @Original_Pro_DtAlt)) AND ((@IsNull_Pro_DtExc = 1 AND [Pro_DtExc] IS NULL) OR ([Pro_DtExc] = @Original_Pro_DtExc)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_Pro_ID" ColumnName="Pro_ID" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_Pro_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Pro_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_Nome" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_Nome" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_Nome" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_Nome" ColumnName="Pro_Nome" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Original_Pro_Nome" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Pro_Nome" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_Descricao" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_Descricao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_Descricao" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_Descricao" ColumnName="Pro_Descricao" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@Original_Pro_Descricao" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Pro_Descricao" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_DtInc" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_DtInc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_DtInc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_DtInc" ColumnName="Pro_DtInc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Original_Pro_DtInc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtInc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_DtAlt" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_DtAlt" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_DtAlt" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_DtAlt" ColumnName="Pro_DtAlt" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Original_Pro_DtAlt" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtAlt" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_DtExc" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_DtExc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_DtExc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_DtExc" ColumnName="Pro_DtExc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Original_Pro_DtExc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtExc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-              </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO [dbo].[Cad_Profissoes] ([Pro_Nome], [Pro_Descricao], [Pro_DtInc], [Pro_DtAlt], [Pro_DtExc]) VALUES (@Pro_Nome, @Pro_Descricao, @Pro_DtInc, @Pro_DtAlt, @Pro_DtExc);
-SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad_Profissoes WHERE (Pro_ID = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_Nome" ColumnName="Pro_Nome" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Pro_Nome" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Pro_Nome" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_Descricao" ColumnName="Pro_Descricao" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@Pro_Descricao" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Pro_Descricao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_DtInc" ColumnName="Pro_DtInc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Pro_DtInc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtInc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_DtAlt" ColumnName="Pro_DtAlt" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Pro_DtAlt" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtAlt" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_DtExc" ColumnName="Pro_DtExc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Pro_DtExc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtExc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-              </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>UPDATE [dbo].[Cad_Profissoes] SET [Pro_Nome] = @Pro_Nome, [Pro_Descricao] = @Pro_Descricao, [Pro_DtInc] = @Pro_DtInc, [Pro_DtAlt] = @Pro_DtAlt, [Pro_DtExc] = @Pro_DtExc WHERE (([Pro_ID] = @Original_Pro_ID) AND ((@IsNull_Pro_Nome = 1 AND [Pro_Nome] IS NULL) OR ([Pro_Nome] = @Original_Pro_Nome)) AND ((@IsNull_Pro_Descricao = 1 AND [Pro_Descricao] IS NULL) OR ([Pro_Descricao] = @Original_Pro_Descricao)) AND ((@IsNull_Pro_DtInc = 1 AND [Pro_DtInc] IS NULL) OR ([Pro_DtInc] = @Original_Pro_DtInc)) AND ((@IsNull_Pro_DtAlt = 1 AND [Pro_DtAlt] IS NULL) OR ([Pro_DtAlt] = @Original_Pro_DtAlt)) AND ((@IsNull_Pro_DtExc = 1 AND [Pro_DtExc] IS NULL) OR ([Pro_DtExc] = @Original_Pro_DtExc)));
-SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad_Profissoes WHERE (Pro_ID = @Pro_ID)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_Nome" ColumnName="Pro_Nome" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Pro_Nome" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Pro_Nome" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_Descricao" ColumnName="Pro_Descricao" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@Pro_Descricao" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Pro_Descricao" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_DtInc" ColumnName="Pro_DtInc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Pro_DtInc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtInc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_DtAlt" ColumnName="Pro_DtAlt" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Pro_DtAlt" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtAlt" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Pro_DtExc" ColumnName="Pro_DtExc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Pro_DtExc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtExc" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_Pro_ID" ColumnName="Pro_ID" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_Pro_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Pro_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_Nome" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_Nome" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_Nome" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_Nome" ColumnName="Pro_Nome" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Original_Pro_Nome" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Pro_Nome" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_Descricao" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_Descricao" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_Descricao" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_Descricao" ColumnName="Pro_Descricao" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="varchar(300)" DbType="AnsiString" Direction="Input" ParameterName="@Original_Pro_Descricao" Precision="0" ProviderType="VarChar" Scale="0" Size="300" SourceColumn="Pro_Descricao" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_DtInc" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_DtInc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_DtInc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_DtInc" ColumnName="Pro_DtInc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Original_Pro_DtInc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtInc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_DtAlt" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_DtAlt" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_DtAlt" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_DtAlt" ColumnName="Pro_DtAlt" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Original_Pro_DtAlt" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtAlt" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="IsNull_Pro_DtExc" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IsNull_Pro_DtExc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Pro_DtExc" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="Original_Pro_DtExc" ColumnName="Pro_DtExc" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Original_Pro_DtExc" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="Pro_DtExc" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Pro_ID" ColumnName="Pro_ID" DataSourceName="CursoProgramacao.dbo.Cad_Profissoes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Pro_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Pro_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Cad_ProfSetAtuacaoTableAdapter" GeneratorDataComponentClassName="Cad_ProfSetAtuacaoTableAdapter" Name="Cad_ProfSetAtuacao" UserDataComponentName="Cad_ProfSetAtuacaoTableAdapter">
             <MainSource>
@@ -347,31 +253,7 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
               <Mapping SourceColumn="SetA_ProID" DataSetColumn="SetA_ProID" />
               <Mapping SourceColumn="SetA_SetID" DataSetColumn="SetA_SetID" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>DELETE FROM [dbo].[Cad_ProfSetAtuacao] WHERE (([SetA_ProID] = @Original_SetA_ProID) AND ([SetA_SetID] = @Original_SetA_SetID))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_SetA_ProID" ColumnName="SetA_ProID" DataSourceName="CursoProgramacao.dbo.Cad_ProfSetAtuacao" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_SetA_ProID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SetA_ProID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Original_SetA_SetID" ColumnName="SetA_SetID" DataSourceName="CursoProgramacao.dbo.Cad_ProfSetAtuacao" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_SetA_SetID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SetA_SetID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-              </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>INSERT INTO [dbo].[Cad_ProfSetAtuacao] ([SetA_ProID], [SetA_SetID]) VALUES (@SetA_ProID, @SetA_SetID);
-SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_ProID) AND (SetA_SetID = @SetA_SetID)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="SetA_ProID" ColumnName="SetA_ProID" DataSourceName="CursoProgramacao.dbo.Cad_ProfSetAtuacao" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SetA_ProID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SetA_ProID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="SetA_SetID" ColumnName="SetA_SetID" DataSourceName="CursoProgramacao.dbo.Cad_ProfSetAtuacao" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SetA_SetID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SetA_SetID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -381,7 +263,7 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
   <xs:element name="dsCadastro" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCadastro" msprop:Generator_UserDSName="dsCadastro">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Cad_Setores" msprop:Generator_TableClassName="Cad_SetoresDataTable" msprop:Generator_TableVarName="tableCad_Setores" msprop:Generator_TablePropName="Cad_Setores" msprop:Generator_RowDeletingName="Cad_SetoresRowDeleting" msprop:Generator_RowChangingName="Cad_SetoresRowChanging" msprop:Generator_RowEvHandlerName="Cad_SetoresRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_SetoresRowDeleted" msprop:Generator_UserTableName="Cad_Setores" msprop:Generator_RowChangedName="Cad_SetoresRowChanged" msprop:Generator_RowEvArgName="Cad_SetoresRowChangeEvent" msprop:Generator_RowClassName="Cad_SetoresRow">
+        <xs:element name="Cad_Setores" msprop:Generator_TableClassName="Cad_SetoresDataTable" msprop:Generator_TableVarName="tableCad_Setores" msprop:Generator_RowChangedName="Cad_SetoresRowChanged" msprop:Generator_TablePropName="Cad_Setores" msprop:Generator_RowDeletingName="Cad_SetoresRowDeleting" msprop:Generator_RowChangingName="Cad_SetoresRowChanging" msprop:Generator_RowEvHandlerName="Cad_SetoresRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_SetoresRowDeleted" msprop:Generator_RowClassName="Cad_SetoresRow" msprop:Generator_UserTableName="Cad_Setores" msprop:Generator_RowEvArgName="Cad_SetoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Set_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSet_ID" msprop:Generator_ColumnPropNameInRow="Set_ID" msprop:Generator_ColumnPropNameInTable="Set_IDColumn" msprop:Generator_UserColumnName="Set_ID" type="xs:int" />
@@ -405,7 +287,7 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cad_Profissoes" msprop:Generator_TableClassName="Cad_ProfissoesDataTable" msprop:Generator_TableVarName="tableCad_Profissoes" msprop:Generator_TablePropName="Cad_Profissoes" msprop:Generator_RowDeletingName="Cad_ProfissoesRowDeleting" msprop:Generator_RowChangingName="Cad_ProfissoesRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfissoesRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfissoesRowDeleted" msprop:Generator_UserTableName="Cad_Profissoes" msprop:Generator_RowChangedName="Cad_ProfissoesRowChanged" msprop:Generator_RowEvArgName="Cad_ProfissoesRowChangeEvent" msprop:Generator_RowClassName="Cad_ProfissoesRow">
+        <xs:element name="Cad_Profissoes" msprop:Generator_TableClassName="Cad_ProfissoesDataTable" msprop:Generator_TableVarName="tableCad_Profissoes" msprop:Generator_RowChangedName="Cad_ProfissoesRowChanged" msprop:Generator_TablePropName="Cad_Profissoes" msprop:Generator_RowDeletingName="Cad_ProfissoesRowDeleting" msprop:Generator_RowChangingName="Cad_ProfissoesRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfissoesRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfissoesRowDeleted" msprop:Generator_RowClassName="Cad_ProfissoesRow" msprop:Generator_UserTableName="Cad_Profissoes" msprop:Generator_RowEvArgName="Cad_ProfissoesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Pro_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPro_ID" msprop:Generator_ColumnPropNameInRow="Pro_ID" msprop:Generator_ColumnPropNameInTable="Pro_IDColumn" msprop:Generator_UserColumnName="Pro_ID" type="xs:int" />
@@ -429,7 +311,7 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cad_ProfSetAtuacao" msprop:Generator_TableClassName="Cad_ProfSetAtuacaoDataTable" msprop:Generator_TableVarName="tableCad_ProfSetAtuacao" msprop:Generator_TablePropName="Cad_ProfSetAtuacao" msprop:Generator_RowDeletingName="Cad_ProfSetAtuacaoRowDeleting" msprop:Generator_RowChangingName="Cad_ProfSetAtuacaoRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfSetAtuacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfSetAtuacaoRowDeleted" msprop:Generator_UserTableName="Cad_ProfSetAtuacao" msprop:Generator_RowChangedName="Cad_ProfSetAtuacaoRowChanged" msprop:Generator_RowEvArgName="Cad_ProfSetAtuacaoRowChangeEvent" msprop:Generator_RowClassName="Cad_ProfSetAtuacaoRow">
+        <xs:element name="Cad_ProfSetAtuacao" msprop:Generator_TableClassName="Cad_ProfSetAtuacaoDataTable" msprop:Generator_TableVarName="tableCad_ProfSetAtuacao" msprop:Generator_RowChangedName="Cad_ProfSetAtuacaoRowChanged" msprop:Generator_TablePropName="Cad_ProfSetAtuacao" msprop:Generator_RowDeletingName="Cad_ProfSetAtuacaoRowDeleting" msprop:Generator_RowChangingName="Cad_ProfSetAtuacaoRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfSetAtuacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfSetAtuacaoRowDeleted" msprop:Generator_RowClassName="Cad_ProfSetAtuacaoRow" msprop:Generator_UserTableName="Cad_ProfSetAtuacao" msprop:Generator_RowEvArgName="Cad_ProfSetAtuacaoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SetA_ProID" msprop:Generator_ColumnVarNameInTable="columnSetA_ProID" msprop:Generator_ColumnPropNameInRow="SetA_ProID" msprop:Generator_ColumnPropNameInTable="SetA_ProIDColumn" msprop:Generator_UserColumnName="SetA_ProID" type="xs:int" />
@@ -455,8 +337,8 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Profissoes" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Pro_ID" msdata:childkey="SetA_ProID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_ParentPropName="Cad_ProfissoesRow" msprop:Generator_RelationVarName="relationCad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Profissoes" />
-      <msdata:Relationship name="Cad_Setores_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Setores" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Set_ID" msdata:childkey="SetA_SetID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_ParentPropName="Cad_SetoresRow" msprop:Generator_RelationVarName="relationCad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Setores" />
+      <msdata:Relationship name="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Profissoes" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Pro_ID" msdata:childkey="SetA_ProID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_RelationVarName="relationCad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Profissoes" msprop:Generator_ParentPropName="Cad_ProfissoesRow" />
+      <msdata:Relationship name="Cad_Setores_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Setores" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Set_ID" msdata:childkey="SetA_SetID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_RelationVarName="relationCad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Setores" msprop:Generator_ParentPropName="Cad_SetoresRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

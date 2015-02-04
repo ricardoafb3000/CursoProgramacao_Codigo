@@ -78,6 +78,24 @@ namespace ExemploADO
 
         }
 
+        public override bool Excluir()
+        {
+            using (ExemploADO.dsCadastroTableAdapters.Cad_SetoresTableAdapter adapter = new dsCadastroTableAdapters.Cad_SetoresTableAdapter())
+            {
+                dsCadastro.Cad_SetoresDataTable dt = new dsCadastro.Cad_SetoresDataTable();
+
+                //obtém o registro para ser alterado
+                adapter.FillByID(dt, this.ID);
+
+                if (dt.Rows.Count == 0)
+                    throw new Exception("O Item não foi encontrado para ser excluído");
+
+                adapter.Deletar(this.ID);
+
+            }
+
+            return true;
+        }
 
     }
 }

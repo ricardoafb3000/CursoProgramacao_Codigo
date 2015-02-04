@@ -2010,7 +2010,7 @@ SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM Cad
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM dbo." +
@@ -2040,27 +2040,6 @@ SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM Cad
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Set_Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Set_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[Cad_Setores] ([Set_Nome], [Set_Descricao], [Set_DtInc], [Set_DtAlt], [Set_DtExc]) VALUES (@Set_Nome, @Set_Descricao, @Set_DtInc, @Set_DtAlt);
-SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM Cad_Setores WHERE (Set_ID = SCOPE_IDENTITY())";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Set_Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_Descricao", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Set_Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_DtInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Set_DtInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_DtAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Set_DtAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "UPDATE [dbo].[Cad_Setores] SET [Set_Nome] = @Set_Nome, [Set_Descricao] = @Set_Des" +
-                "cricao, [Set_DtInc] = @Set_DtInc, [Set_DtAlt] = @Set_DtAlt, [Set_DtExc] = @Set_D" +
-                "tExc \r\nWHERE [Set_ID] = @Original_Set_ID\r\n";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Set_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Set_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Set_Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_Descricao", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Set_Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_DtInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Set_DtInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_DtAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Set_DtAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Set_DtExc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Set_DtExc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2399,110 +2378,9 @@ SELECT Set_ID, Set_Nome, Set_Descricao, Set_DtInc, Set_DtAlt, Set_DtExc FROM Cad
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_Set_ID) {
+        public virtual int Deletar(int Original_Set_ID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(Original_Set_ID));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string Set_Nome, string Set_Descricao, global::System.Nullable<global::System.DateTime> Set_DtInc, global::System.Nullable<global::System.DateTime> Set_DtAlt) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
-            if ((Set_Nome == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(Set_Nome));
-            }
-            if ((Set_Descricao == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Set_Descricao));
-            }
-            if ((Set_DtInc.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(Set_DtInc.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Set_DtAlt.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(Set_DtAlt.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(int Original_Set_ID, string Set_Nome, string Set_Descricao, global::System.Nullable<global::System.DateTime> Set_DtInc, global::System.Nullable<global::System.DateTime> Set_DtAlt, global::System.Nullable<global::System.DateTime> Set_DtExc) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
-            command.Parameters[0].Value = ((int)(Original_Set_ID));
-            if ((Set_Nome == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Set_Nome));
-            }
-            if ((Set_Descricao == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Set_Descricao));
-            }
-            if ((Set_DtInc.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(Set_DtInc.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Set_DtAlt.HasValue == true)) {
-                command.Parameters[4].Value = ((System.DateTime)(Set_DtAlt.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Set_DtExc.HasValue == true)) {
-                command.Parameters[5].Value = ((System.DateTime)(Set_DtExc.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2708,59 +2586,12 @@ SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM dbo." +
                 "Cad_Profissoes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"DELETE FROM [dbo].[Cad_Profissoes] WHERE (([Pro_ID] = @Original_Pro_ID) AND ((@IsNull_Pro_Nome = 1 AND [Pro_Nome] IS NULL) OR ([Pro_Nome] = @Original_Pro_Nome)) AND ((@IsNull_Pro_Descricao = 1 AND [Pro_Descricao] IS NULL) OR ([Pro_Descricao] = @Original_Pro_Descricao)) AND ((@IsNull_Pro_DtInc = 1 AND [Pro_DtInc] IS NULL) OR ([Pro_DtInc] = @Original_Pro_DtInc)) AND ((@IsNull_Pro_DtAlt = 1 AND [Pro_DtAlt] IS NULL) OR ([Pro_DtAlt] = @Original_Pro_DtAlt)) AND ((@IsNull_Pro_DtExc = 1 AND [Pro_DtExc] IS NULL) OR ([Pro_DtExc] = @Original_Pro_DtExc)))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_Nome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Nome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_Descricao", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_DtInc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtInc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_DtInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtInc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_DtAlt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtAlt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_DtAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtAlt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_DtExc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtExc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_DtExc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtExc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"INSERT INTO [dbo].[Cad_Profissoes] ([Pro_Nome], [Pro_Descricao], [Pro_DtInc], [Pro_DtAlt], [Pro_DtExc]) VALUES (@Pro_Nome, @Pro_Descricao, @Pro_DtInc, @Pro_DtAlt, @Pro_DtExc);
-SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad_Profissoes WHERE (Pro_ID = SCOPE_IDENTITY())";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_Descricao", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_DtInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_DtAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_DtExc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtExc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"UPDATE [dbo].[Cad_Profissoes] SET [Pro_Nome] = @Pro_Nome, [Pro_Descricao] = @Pro_Descricao, [Pro_DtInc] = @Pro_DtInc, [Pro_DtAlt] = @Pro_DtAlt, [Pro_DtExc] = @Pro_DtExc WHERE (([Pro_ID] = @Original_Pro_ID) AND ((@IsNull_Pro_Nome = 1 AND [Pro_Nome] IS NULL) OR ([Pro_Nome] = @Original_Pro_Nome)) AND ((@IsNull_Pro_Descricao = 1 AND [Pro_Descricao] IS NULL) OR ([Pro_Descricao] = @Original_Pro_Descricao)) AND ((@IsNull_Pro_DtInc = 1 AND [Pro_DtInc] IS NULL) OR ([Pro_DtInc] = @Original_Pro_DtInc)) AND ((@IsNull_Pro_DtAlt = 1 AND [Pro_DtAlt] IS NULL) OR ([Pro_DtAlt] = @Original_Pro_DtAlt)) AND ((@IsNull_Pro_DtExc = 1 AND [Pro_DtExc] IS NULL) OR ([Pro_DtExc] = @Original_Pro_DtExc)));
-SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad_Profissoes WHERE (Pro_ID = @Pro_ID)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_Descricao", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_DtInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_DtAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_DtExc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtExc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_Nome", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Nome", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_Nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_Descricao", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_DtInc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtInc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_DtInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtInc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_DtAlt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtAlt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_DtAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtAlt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pro_DtExc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtExc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pro_DtExc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_DtExc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pro_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Pro_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3029,275 +2860,6 @@ SELECT Pro_ID, Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc FROM Cad
         public virtual int Update(string Pro_Nome, string Pro_Descricao, global::System.Nullable<global::System.DateTime> Pro_DtInc, global::System.Nullable<global::System.DateTime> Pro_DtAlt, global::System.Nullable<global::System.DateTime> Pro_DtExc, int Original_Pro_ID, string Original_Pro_Nome, string Original_Pro_Descricao, global::System.Nullable<global::System.DateTime> Original_Pro_DtInc, global::System.Nullable<global::System.DateTime> Original_Pro_DtAlt, global::System.Nullable<global::System.DateTime> Original_Pro_DtExc) {
             return this.Update(Pro_Nome, Pro_Descricao, Pro_DtInc, Pro_DtAlt, Pro_DtExc, Original_Pro_ID, Original_Pro_Nome, Original_Pro_Descricao, Original_Pro_DtInc, Original_Pro_DtAlt, Original_Pro_DtExc, Original_Pro_ID);
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_Pro_ID, global::System.Nullable<int> IsNull_Pro_Nome, string Original_Pro_Nome, global::System.Nullable<int> IsNull_Pro_Descricao, string Original_Pro_Descricao, global::System.Nullable<int> IsNull_Pro_DtInc, global::System.Nullable<global::System.DateTime> Original_Pro_DtInc, global::System.Nullable<int> IsNull_Pro_DtAlt, global::System.Nullable<global::System.DateTime> Original_Pro_DtAlt, global::System.Nullable<int> IsNull_Pro_DtExc, global::System.Nullable<global::System.DateTime> Original_Pro_DtExc) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(Original_Pro_ID));
-            if ((IsNull_Pro_Nome.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(IsNull_Pro_Nome.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_Nome == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Original_Pro_Nome));
-            }
-            if ((IsNull_Pro_Descricao.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(IsNull_Pro_Descricao.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_Descricao == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[4].Value = ((string)(Original_Pro_Descricao));
-            }
-            if ((IsNull_Pro_DtInc.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(IsNull_Pro_DtInc.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_DtInc.HasValue == true)) {
-                command.Parameters[6].Value = ((System.DateTime)(Original_Pro_DtInc.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_Pro_DtAlt.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(IsNull_Pro_DtAlt.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_DtAlt.HasValue == true)) {
-                command.Parameters[8].Value = ((System.DateTime)(Original_Pro_DtAlt.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_Pro_DtExc.HasValue == true)) {
-                command.Parameters[9].Value = ((int)(IsNull_Pro_DtExc.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_DtExc.HasValue == true)) {
-                command.Parameters[10].Value = ((System.DateTime)(Original_Pro_DtExc.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string Pro_Nome, string Pro_Descricao, global::System.Nullable<global::System.DateTime> Pro_DtInc, global::System.Nullable<global::System.DateTime> Pro_DtAlt, global::System.Nullable<global::System.DateTime> Pro_DtExc) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((Pro_Nome == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(Pro_Nome));
-            }
-            if ((Pro_Descricao == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Pro_Descricao));
-            }
-            if ((Pro_DtInc.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(Pro_DtInc.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Pro_DtAlt.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(Pro_DtAlt.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Pro_DtExc.HasValue == true)) {
-                command.Parameters[4].Value = ((System.DateTime)(Pro_DtExc.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(
-                    string Pro_Nome, 
-                    string Pro_Descricao, 
-                    global::System.Nullable<global::System.DateTime> Pro_DtInc, 
-                    global::System.Nullable<global::System.DateTime> Pro_DtAlt, 
-                    global::System.Nullable<global::System.DateTime> Pro_DtExc, 
-                    int Original_Pro_ID, 
-                    global::System.Nullable<int> IsNull_Pro_Nome, 
-                    string Original_Pro_Nome, 
-                    global::System.Nullable<int> IsNull_Pro_Descricao, 
-                    string Original_Pro_Descricao, 
-                    global::System.Nullable<int> IsNull_Pro_DtInc, 
-                    global::System.Nullable<global::System.DateTime> Original_Pro_DtInc, 
-                    global::System.Nullable<int> IsNull_Pro_DtAlt, 
-                    global::System.Nullable<global::System.DateTime> Original_Pro_DtAlt, 
-                    global::System.Nullable<int> IsNull_Pro_DtExc, 
-                    global::System.Nullable<global::System.DateTime> Original_Pro_DtExc, 
-                    int Pro_ID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
-            if ((Pro_Nome == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[0].Value = ((string)(Pro_Nome));
-            }
-            if ((Pro_Descricao == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Pro_Descricao));
-            }
-            if ((Pro_DtInc.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(Pro_DtInc.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Pro_DtAlt.HasValue == true)) {
-                command.Parameters[3].Value = ((System.DateTime)(Pro_DtAlt.Value));
-            }
-            else {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Pro_DtExc.HasValue == true)) {
-                command.Parameters[4].Value = ((System.DateTime)(Pro_DtExc.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            command.Parameters[5].Value = ((int)(Original_Pro_ID));
-            if ((IsNull_Pro_Nome.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(IsNull_Pro_Nome.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_Nome == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(Original_Pro_Nome));
-            }
-            if ((IsNull_Pro_Descricao.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(IsNull_Pro_Descricao.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_Descricao == null)) {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[9].Value = ((string)(Original_Pro_Descricao));
-            }
-            if ((IsNull_Pro_DtInc.HasValue == true)) {
-                command.Parameters[10].Value = ((int)(IsNull_Pro_DtInc.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_DtInc.HasValue == true)) {
-                command.Parameters[11].Value = ((System.DateTime)(Original_Pro_DtInc.Value));
-            }
-            else {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_Pro_DtAlt.HasValue == true)) {
-                command.Parameters[12].Value = ((int)(IsNull_Pro_DtAlt.Value));
-            }
-            else {
-                command.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_DtAlt.HasValue == true)) {
-                command.Parameters[13].Value = ((System.DateTime)(Original_Pro_DtAlt.Value));
-            }
-            else {
-                command.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_Pro_DtExc.HasValue == true)) {
-                command.Parameters[14].Value = ((int)(IsNull_Pro_DtExc.Value));
-            }
-            else {
-                command.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pro_DtExc.HasValue == true)) {
-                command.Parameters[15].Value = ((System.DateTime)(Original_Pro_DtExc.Value));
-            }
-            else {
-                command.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            command.Parameters[16].Value = ((int)(Pro_ID));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
     }
     
     /// <summary>
@@ -3460,26 +3022,11 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT SetA_ProID, SetA_SetID FROM dbo.Cad_ProfSetAtuacao";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Cad_ProfSetAtuacao] WHERE (([SetA_ProID] = @Original_SetA_ProI" +
-                "D) AND ([SetA_SetID] = @Original_SetA_SetID))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SetA_ProID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SetA_ProID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SetA_SetID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SetA_SetID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Cad_ProfSetAtuacao] ([SetA_ProID], [SetA_SetID]) VALUES (@SetA" +
-                "_ProID, @SetA_SetID);\r\nSELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHE" +
-                "RE (SetA_ProID = @SetA_ProID) AND (SetA_SetID = @SetA_SetID)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SetA_ProID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SetA_ProID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SetA_SetID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SetA_SetID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3612,56 +3159,6 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int Original_SetA_ProID, int Original_SetA_SetID) {
             return this.Update(Original_SetA_ProID, Original_SetA_SetID, Original_SetA_ProID, Original_SetA_SetID);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_SetA_ProID, int Original_SetA_SetID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(Original_SetA_ProID));
-            command.Parameters[1].Value = ((int)(Original_SetA_SetID));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(int SetA_ProID, int SetA_SetID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(SetA_ProID));
-            command.Parameters[1].Value = ((int)(SetA_SetID));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
