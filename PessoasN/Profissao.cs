@@ -116,7 +116,7 @@ namespace PessoasN
 
         }
 
-        public bool AdicionaSetorAtuacao(int SetorID)
+        public virtual bool AdicionaSetorAtuacao(int SetorID)
         {
             Erros.Clear();
 
@@ -136,7 +136,7 @@ namespace PessoasN
 
         }
 
-        public bool RemoveSetorAtuacao(int SetorID)
+        public virtual bool RemoveSetorAtuacao(int SetorID)
         {
             Erros.Clear();
 

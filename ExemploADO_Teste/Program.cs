@@ -12,8 +12,8 @@ namespace ExemploADO_Teste
         {
             Setor novoSetor = new Setor();
 
-            novoSetor.ID = 2;
-            novoSetor.Nome = "Novo nome";
+            novoSetor.ID = 1;
+            novoSetor.Nome = "Novo nomee de novo";
             novoSetor.Descricao = "teste descrição";
 
             if (!novoSetor.Salvar())

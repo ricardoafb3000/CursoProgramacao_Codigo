@@ -9,6 +9,36 @@ namespace ExemploADO
     public class Setor : PessoasN.Setor
     {
 
+        public static Setor PesquisarPorID(int ID)
+        {
+            using (ExemploADO.dsCadastroTableAdapters.Cad_SetoresTableAdapter adapter = new dsCadastroTableAdapters.Cad_SetoresTableAdapter())
+            {
+                dsCadastro.Cad_SetoresDataTable dt = new dsCadastro.Cad_SetoresDataTable();
+
+                adapter.FillByID(dt, ID);
+
+                if (dt.Rows.Count > 0)
+                {
+                    dsCadastro.Cad_SetoresRow row = (dsCadastro.Cad_SetoresRow) dt.Rows[0];
+                    
+                    return new Setor()
+                    {
+                        ID = row.Set_ID,
+                        Nome = row.Set_Nome,
+                        Descricao = row.Set_Descricao,
+                        DtInclusao = row.Set_DtInc,
+                        DtAlteracao = row.Set_DtAlt,
+                        DtExclusao = row.Set_DtExc
+
+                    };
+
+                }
+            }
+
+            return null;
+
+        }
+
         public override bool Salvar()
         {
             if (base.Validar())
@@ -38,6 +68,9 @@ namespace ExemploADO
                         newRow.Set_DtInc = this.DtInclusao;
 
                         dt.AddCad_SetoresRow(newRow);
+
+                        adapter.Update(dt);
+
                         //seta o novo ID
                         this.ID = newRow.Set_ID;
 
@@ -67,9 +100,9 @@ namespace ExemploADO
                         rowSendoAlterado.Set_Descricao = this.Descricao;
                         rowSendoAlterado.Set_DtAlt = this.DtAlteracao;
 
-                    }
+                        adapter.Update(dt);
 
-                    adapter.Adapter.Update(dt);
+                    }
 
                 }
             }
