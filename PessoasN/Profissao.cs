@@ -9,8 +9,9 @@ namespace PessoasN
     public class Profissao : Comun
     {
 
-        
+        [ValidaTexto("Nome", true, 50)]        
         public string Nome { get; set; }
+        [ValidaTexto("Descrição", true, 300)]
         public string Descricao { get; set; }
 
         private List<Setor> _SetoresAtuacao = new List<Setor>();
@@ -27,35 +28,30 @@ namespace PessoasN
 
         }
 
-        public override bool Salvar(out string Erro)
+        public override bool Salvar()
         {
-            base.OnSalvar(out Erro);
-
-            if (string.IsNullOrEmpty(this.Nome))
-                Erro = "Nome deve ser informado";
-
-            if (this.Nome.Length > 50)
-                Erro = "Nome não pode ter mais de 50 caracteres";
-
-            if (this.Descricao.Length > 50)
-                Erro = "Descrição não pode ter mais de 300 caracteres";
-
-            if (string.IsNullOrEmpty(Erro))
+            
+            if (base.Validar())
             {
+                base.OnSalvar();
+
                 if (this.ID == 0)
                 {
                     //inclusão
                     if (BancoDados.Corrente.Profissoes
                         .Where(item => item.Nome.Trim().ToLower() == this.Nome.Trim().ToLower())
                         .Count() > 0)
-                        Erro = string.Concat("O Nome ", this.Nome, " já está sendo usado");
+                        Erros.Add("Nome", string.Concat("O Nome ", this.Nome, " já está sendo usado"));
 
-                    //seta novo id
-                    this.ID = BancoDados.Corrente.Profissoes.Max(item => item.ID) + 1;
+                    else
+                    { 
+                        //seta novo id
+                        this.ID = BancoDados.Corrente.Profissoes.Max(item => item.ID) + 1;
 
-                    //"salva" para o Banco
-                    BancoDados.Corrente.Profissoes.Add(this);
+                        //"salva" para o Banco
+                        BancoDados.Corrente.Profissoes.Add(this);
 
+                    }
                 }
                 else
                 {
@@ -63,14 +59,14 @@ namespace PessoasN
                     Profissao paraAlterar = ConsegueItemsAtivos().Where(item => item.ID == this.ID).FirstOrDefault();
 
                     if (paraAlterar == null)
-                        Erro = "O Item não foi encontrado para ser alterado";
+                        throw new Exception("O Item não foi encontrado para ser alterado");
 
                     if (BancoDados.Corrente.Profissoes
                         .Where(
                             item => item.Nome.Trim().ToLower() == this.Nome.Trim().ToLower()
                             && item.ID != this.ID)
                         .Count() > 0)
-                        Erro = string.Concat("O Nome ", this.Nome, " já está sendo usado");
+                        Erros.Add("Nome", string.Concat("O Nome ", this.Nome, " já está sendo usado"));
 
                     else
                     { 
@@ -86,23 +82,23 @@ namespace PessoasN
 
             }
 
-            return string.IsNullOrEmpty(Erro);
+            return Erros.Count == 0;
 
         }
 
-        public override bool Excluir(out string Erro)
+        public override bool Excluir()
         {
-            base.OnExcluir(out Erro);
+            base.OnExcluir();
 
             Profissao paraExcluir = ConsegueItemsAtivos().Where(item => item.ID == this.ID).FirstOrDefault();
 
             if (paraExcluir == null)
-                Erro = "O Item não foi encontrado para ser excluído";
+                throw new Exception("O Item não foi encontrado para ser excluído");
 
-            if (string.IsNullOrEmpty(Erro) && SendoUsado())
-                Erro = "O Item está sendo usado em outro cadastro";
+            if (SendoUsado())
+                Erros.Add("Nome", "O Item está sendo usado em outro cadastro");
 
-            if (string.IsNullOrEmpty(Erro))
+            if (Erros.Count == 0)
             {
                 //"Exclui"
                 // dt de exclusão já setada
@@ -110,7 +106,7 @@ namespace PessoasN
 
             }
 
-            return string.IsNullOrEmpty(Erro);
+            return Erros.Count == 0;
 
         }
 
@@ -120,40 +116,39 @@ namespace PessoasN
 
         }
 
-        public bool AdicionaSetorAtuacao(int SetorID, out string Erro)
+        public bool AdicionaSetorAtuacao(int SetorID)
         {
-            Erro = "";
+            Erros.Clear();
 
             Setor setorParaAdicionar = BancoDados.Corrente.Setores.Where(item => item.ID == SetorID).FirstOrDefault();
 
             if (setorParaAdicionar == null)
-                Erro = "ID de Setor inválido";
+                throw new  Exception("ID de Setor inválido");
 
-            if (string.IsNullOrEmpty(Erro) && this.SetoresAtuacao.Where(item => item.ID == SetorID).FirstOrDefault() != null)
-                Erro = "Setor de Atuação já adicionado";
+            if (this.SetoresAtuacao.Where(item => item.ID == SetorID).FirstOrDefault() != null)
+                Erros.Add("", "Setor de Atuação já adicionado");
 
-            if (string.IsNullOrEmpty(Erro))
+            if (Erros.Count == 0)
                 //adiciona o setor de atuação
                 this.SetoresAtuacao.Add(setorParaAdicionar);
 
-            return string.IsNullOrEmpty(Erro);
+            return Erros.Count == 0;
 
         }
 
-        public bool RemoveSetorAtuacao(int SetorID, out string Erro)
+        public bool RemoveSetorAtuacao(int SetorID)
         {
-            Erro = "";
+            Erros.Clear();
 
             Setor setorParaRemover = this.SetoresAtuacao.Where(item => item.ID == SetorID).FirstOrDefault();
 
             if (setorParaRemover == null)
-                Erro = "Setor de Atuação inexistente para Excluir";
+                throw new Exception("Setor de Atuação inexistente para Excluir");
 
-            if (string.IsNullOrEmpty(Erro))
-                //remove o setor de atuação
-                this.SetoresAtuacao.Remove(setorParaRemover);
+            //remove o setor de atuação
+            this.SetoresAtuacao.Remove(setorParaRemover);
 
-            return string.IsNullOrEmpty(Erro);
+            return Erros.Count == 0;
 
         }
 

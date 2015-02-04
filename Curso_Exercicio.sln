@@ -7,6 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PessoasN", "PessoasN\Pessoa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PessoaTeste", "PessoaTeste\PessoaTeste.csproj", "{AD14181A-2DCF-43DD-9FF2-1490DA9052E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploADO", "ExemploADO\ExemploADO.csproj", "{68336A67-BFC7-4E8E-B6FE-C39C519B3DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploADO_Teste", "ExemploADO_Teste\ExemploADO_Teste.csproj", "{7C8B0B55-0604-4CAB-98E5-3A1D1C147300}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{FC74332D-797B-472B-B67F-9543497F9B70}"
+	ProjectSection(SolutionItems) = preProject
+		Util\CriaBancoDados.sql = Util\CriaBancoDados.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +30,14 @@ Global
 		{AD14181A-2DCF-43DD-9FF2-1490DA9052E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD14181A-2DCF-43DD-9FF2-1490DA9052E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD14181A-2DCF-43DD-9FF2-1490DA9052E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68336A67-BFC7-4E8E-B6FE-C39C519B3DB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68336A67-BFC7-4E8E-B6FE-C39C519B3DB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68336A67-BFC7-4E8E-B6FE-C39C519B3DB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68336A67-BFC7-4E8E-B6FE-C39C519B3DB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8B0B55-0604-4CAB-98E5-3A1D1C147300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8B0B55-0604-4CAB-98E5-3A1D1C147300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8B0B55-0604-4CAB-98E5-3A1D1C147300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8B0B55-0604-4CAB-98E5-3A1D1C147300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

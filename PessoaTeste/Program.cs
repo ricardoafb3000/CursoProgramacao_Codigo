@@ -21,10 +21,9 @@ namespace PessoaTeste
 
             };
 
-            string Erro;
-            if (!tpLogradouro.Salvar(out Erro))
+            if (!tpLogradouro.Salvar())
             {
-                Console.WriteLine(Erro);
+                Console.WriteLine(tpLogradouro.Erros.Values);
                 Console.Read();
 
             }

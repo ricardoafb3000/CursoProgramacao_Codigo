@@ -19,8 +19,8 @@ namespace PessoasN
         public DateTime DtAlteracao { get; set; }
         public DateTime? DtExclusao { get; set; }
 
-        public abstract bool Salvar(out string Erro);
-        public abstract bool Excluir(out string Erro);
+        public abstract bool Salvar();
+        public abstract bool Excluir();
 
         public Dictionary<string, string> Erros = new Dictionary<string, string>();
 
@@ -57,9 +57,9 @@ namespace PessoasN
 
         }
 
-        protected virtual bool OnSalvar(out string Erro)
+        protected virtual bool OnSalvar()
         {
-            Erro = "";
+            Erros.Clear();
 
             if (this.ID == 0)
                 //inclusão
@@ -72,9 +72,9 @@ namespace PessoasN
             return true;
 
         }
-        protected virtual bool OnExcluir(out string Erro)
+        protected virtual bool OnExcluir()
         {
-            Erro = "";
+            Erros.Clear();
 
             this.DtExclusao = DateTime.Now;
 
