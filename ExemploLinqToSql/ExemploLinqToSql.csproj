@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68336A67-BFC7-4E8E-B6FE-C39C519B3DB0}</ProjectGuid>
+    <ProjectGuid>{95B60289-3A4E-4CE0-86AD-C53FB5521EC6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExemploADO</RootNamespace>
-    <AssemblyName>ExemploADO</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>ExemploLinqToSql</RootNamespace>
+    <AssemblyName>ExemploLinqToSql</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,36 +41,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dsCadastro1.Designer.cs">
+    <Compile Include="dsCadastro.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dsCadastro.xsd</DependentUpon>
+      <DependentUpon>dsCadastro.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Profissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Profissao.cs" />
     <Compile Include="Setor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="dsCadastro.xsc">
-      <DependentUpon>dsCadastro.xsd</DependentUpon>
-    </None>
-    <None Include="dsCadastro.xsd">
+    <None Include="dsCadastro.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dsCadastro.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCadastro1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsCadastro.xss">
-      <DependentUpon>dsCadastro.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dsCadastro.dbml.layout">
+      <DependentUpon>dsCadastro.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

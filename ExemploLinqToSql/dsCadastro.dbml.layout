@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9" name="dsCadastro">
+  <DataContextMoniker Name="/dsCadastroDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8ae7bdda-9669-4eb3-87fc-6b3974fb2d02" absoluteBounds="0.625, 2.125, 2.375, 1.9631982421875">
+      <DataClassMoniker Name="/dsCadastroDataContext/Cad_Setores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f71f82bb-372e-43a2-8f81-befdc45dfe2a" absoluteBounds="0.64, 2.585, 2.3449999999999998, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ea4a9e1-b5fc-4261-a146-9805719c13a5" absoluteBounds="5, 6.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dsCadastroDataContext/Cad_Profissoes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0199ae45-9cfb-4f52-9db7-849b1660866f" absoluteBounds="5.015, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c026371-aee7-417e-95cb-33e77be94102" absoluteBounds="5.25, 2.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dsCadastroDataContext/Cad_ProfSetAtuacao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="749cc67e-5042-45ba-a208-2dab65f6c1cb" absoluteBounds="5.265, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 6.75); (6.125 : 3.56899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dsCadastroDataContext/Cad_Profissoes/Cad_Profissoes_Cad_ProfSetAtuacao" />
+      <nodes>
+        <classShapeMoniker Id="0ea4a9e1-b5fc-4261-a146-9805719c13a5" />
+        <classShapeMoniker Id="4c026371-aee7-417e-95cb-33e77be94102" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 2.97199625651042); (5.25 : 2.97199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dsCadastroDataContext/Cad_Setores/Cad_Setores_Cad_ProfSetAtuacao" />
+      <nodes>
+        <classShapeMoniker Id="8ae7bdda-9669-4eb3-87fc-6b3974fb2d02" />
+        <classShapeMoniker Id="4c026371-aee7-417e-95cb-33e77be94102" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

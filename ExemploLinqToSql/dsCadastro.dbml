@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CursoProgramacao" Class="dsCadastroDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\FISIO;Initial Catalog=CursoProgramacao;Integrated Security=True" SettingsObjectName="ExemploLinqToSql.Properties.Settings" SettingsPropertyName="CursoProgramacaoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cad_Setores" Member="Cad_Setores">
+    <Type Name="Cad_Setores">
+      <Column Name="Set_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Set_Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Set_Descricao" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Set_DtInc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Set_DtAlt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Set_DtExc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Cad_Setores_Cad_ProfSetAtuacao" Member="Cad_ProfSetAtuacaos" ThisKey="Set_ID" OtherKey="SetA_SetID" Type="Cad_ProfSetAtuacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cad_Profissoes" Member="Cad_Profissoes">
+    <Type Name="Cad_Profissoes">
+      <Column Name="Pro_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pro_Nome" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pro_Descricao" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Pro_DtInc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Pro_DtAlt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Pro_DtExc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Cad_Profissoes_Cad_ProfSetAtuacao" Member="Cad_ProfSetAtuacaos" ThisKey="Pro_ID" OtherKey="SetA_ProID" Type="Cad_ProfSetAtuacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cad_ProfSetAtuacao" Member="Cad_ProfSetAtuacaos">
+    <Type Name="Cad_ProfSetAtuacao">
+      <Column Name="SetA_ProID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SetA_SetID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Cad_Profissoes_Cad_ProfSetAtuacao" Member="Cad_Profissoes" ThisKey="SetA_ProID" OtherKey="Pro_ID" Type="Cad_Profissoes" IsForeignKey="true" />
+      <Association Name="Cad_Setores_Cad_ProfSetAtuacao" Member="Cad_Setores" ThisKey="SetA_SetID" OtherKey="Set_ID" Type="Cad_Setores" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

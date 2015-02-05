@@ -14,8 +14,8 @@ namespace PessoasN
         [ValidaTexto("Descrição", true, 300)]
         public string Descricao { get; set; }
 
-        private List<Setor> _SetoresAtuacao = new List<Setor>();
-        public List<Setor> SetoresAtuacao
+        protected List<Setor> _SetoresAtuacao = new List<Setor>();
+        public virtual List<Setor> SetoresAtuacao
         {
             get { return _SetoresAtuacao; }
             set { _SetoresAtuacao = value; }

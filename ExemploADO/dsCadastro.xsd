@@ -299,7 +299,7 @@ SELECT SetA_ProID, SetA_SetID FROM Cad_ProfSetAtuacao WHERE (SetA_ProID = @SetA_
               <Mapping SourceColumn="SetA_SetID" DataSetColumn="SetA_SetID" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Deletar" Modifier="Public" Name="Deletar" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Deletar">
+              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Deletar" Modifier="Public" Name="Deletar" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Deletar">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Cad_ProfSetAtuacao] 
@@ -311,7 +311,7 @@ WHERE (([SetA_ProID] = @ProfissaoID) AND ([SetA_SetID] = @SetorID))</CommandText
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="CursoProgramacao.dbo.Cad_ProfSetAtuacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByIDs" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIDs" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByIDs">
+              <DbSource ConnectionRef="CursoProgramacaoConnectionString (Settings)" DbObjectName="CursoProgramacao.dbo.Cad_ProfSetAtuacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByIDs" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByIDs" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByIDs">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT SetA_ProID, SetA_SetID FROM dbo.Cad_ProfSetAtuacao
@@ -333,7 +333,7 @@ WHERE SetA_ProID = @ProfissaoID and  SetA_SetID = @SetorID</CommandText>
   <xs:element name="dsCadastro" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCadastro" msprop:Generator_UserDSName="dsCadastro">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Cad_Setores" msprop:Generator_TableClassName="Cad_SetoresDataTable" msprop:Generator_TableVarName="tableCad_Setores" msprop:Generator_TablePropName="Cad_Setores" msprop:Generator_RowDeletingName="Cad_SetoresRowDeleting" msprop:Generator_RowChangingName="Cad_SetoresRowChanging" msprop:Generator_RowEvHandlerName="Cad_SetoresRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_SetoresRowDeleted" msprop:Generator_UserTableName="Cad_Setores" msprop:Generator_RowChangedName="Cad_SetoresRowChanged" msprop:Generator_RowEvArgName="Cad_SetoresRowChangeEvent" msprop:Generator_RowClassName="Cad_SetoresRow">
+        <xs:element name="Cad_Setores" msprop:Generator_TableClassName="Cad_SetoresDataTable" msprop:Generator_TableVarName="tableCad_Setores" msprop:Generator_RowChangedName="Cad_SetoresRowChanged" msprop:Generator_TablePropName="Cad_Setores" msprop:Generator_RowDeletingName="Cad_SetoresRowDeleting" msprop:Generator_RowChangingName="Cad_SetoresRowChanging" msprop:Generator_RowEvHandlerName="Cad_SetoresRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_SetoresRowDeleted" msprop:Generator_RowClassName="Cad_SetoresRow" msprop:Generator_UserTableName="Cad_Setores" msprop:Generator_RowEvArgName="Cad_SetoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Set_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSet_ID" msprop:Generator_ColumnPropNameInRow="Set_ID" msprop:Generator_ColumnPropNameInTable="Set_IDColumn" msprop:Generator_UserColumnName="Set_ID" type="xs:int" />
@@ -357,7 +357,7 @@ WHERE SetA_ProID = @ProfissaoID and  SetA_SetID = @SetorID</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cad_Profissoes" msprop:Generator_TableClassName="Cad_ProfissoesDataTable" msprop:Generator_TableVarName="tableCad_Profissoes" msprop:Generator_TablePropName="Cad_Profissoes" msprop:Generator_RowDeletingName="Cad_ProfissoesRowDeleting" msprop:Generator_RowChangingName="Cad_ProfissoesRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfissoesRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfissoesRowDeleted" msprop:Generator_UserTableName="Cad_Profissoes" msprop:Generator_RowChangedName="Cad_ProfissoesRowChanged" msprop:Generator_RowEvArgName="Cad_ProfissoesRowChangeEvent" msprop:Generator_RowClassName="Cad_ProfissoesRow">
+        <xs:element name="Cad_Profissoes" msprop:Generator_TableClassName="Cad_ProfissoesDataTable" msprop:Generator_TableVarName="tableCad_Profissoes" msprop:Generator_RowChangedName="Cad_ProfissoesRowChanged" msprop:Generator_TablePropName="Cad_Profissoes" msprop:Generator_RowDeletingName="Cad_ProfissoesRowDeleting" msprop:Generator_RowChangingName="Cad_ProfissoesRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfissoesRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfissoesRowDeleted" msprop:Generator_RowClassName="Cad_ProfissoesRow" msprop:Generator_UserTableName="Cad_Profissoes" msprop:Generator_RowEvArgName="Cad_ProfissoesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Pro_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPro_ID" msprop:Generator_ColumnPropNameInRow="Pro_ID" msprop:Generator_ColumnPropNameInTable="Pro_IDColumn" msprop:Generator_UserColumnName="Pro_ID" type="xs:int" />
@@ -381,7 +381,7 @@ WHERE SetA_ProID = @ProfissaoID and  SetA_SetID = @SetorID</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cad_ProfSetAtuacao" msprop:Generator_TableClassName="Cad_ProfSetAtuacaoDataTable" msprop:Generator_TableVarName="tableCad_ProfSetAtuacao" msprop:Generator_TablePropName="Cad_ProfSetAtuacao" msprop:Generator_RowDeletingName="Cad_ProfSetAtuacaoRowDeleting" msprop:Generator_RowChangingName="Cad_ProfSetAtuacaoRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfSetAtuacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfSetAtuacaoRowDeleted" msprop:Generator_UserTableName="Cad_ProfSetAtuacao" msprop:Generator_RowChangedName="Cad_ProfSetAtuacaoRowChanged" msprop:Generator_RowEvArgName="Cad_ProfSetAtuacaoRowChangeEvent" msprop:Generator_RowClassName="Cad_ProfSetAtuacaoRow">
+        <xs:element name="Cad_ProfSetAtuacao" msprop:Generator_TableClassName="Cad_ProfSetAtuacaoDataTable" msprop:Generator_TableVarName="tableCad_ProfSetAtuacao" msprop:Generator_RowChangedName="Cad_ProfSetAtuacaoRowChanged" msprop:Generator_TablePropName="Cad_ProfSetAtuacao" msprop:Generator_RowDeletingName="Cad_ProfSetAtuacaoRowDeleting" msprop:Generator_RowChangingName="Cad_ProfSetAtuacaoRowChanging" msprop:Generator_RowEvHandlerName="Cad_ProfSetAtuacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="Cad_ProfSetAtuacaoRowDeleted" msprop:Generator_RowClassName="Cad_ProfSetAtuacaoRow" msprop:Generator_UserTableName="Cad_ProfSetAtuacao" msprop:Generator_RowEvArgName="Cad_ProfSetAtuacaoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SetA_ProID" msprop:Generator_ColumnVarNameInTable="columnSetA_ProID" msprop:Generator_ColumnPropNameInRow="SetA_ProID" msprop:Generator_ColumnPropNameInTable="SetA_ProIDColumn" msprop:Generator_UserColumnName="SetA_ProID" type="xs:int" />
@@ -407,8 +407,8 @@ WHERE SetA_ProID = @ProfissaoID and  SetA_SetID = @SetorID</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Profissoes" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Pro_ID" msdata:childkey="SetA_ProID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_ParentPropName="Cad_ProfissoesRow" msprop:Generator_RelationVarName="relationCad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Profissoes" />
-      <msdata:Relationship name="Cad_Setores_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Setores" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Set_ID" msdata:childkey="SetA_SetID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_ParentPropName="Cad_SetoresRow" msprop:Generator_RelationVarName="relationCad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Setores" />
+      <msdata:Relationship name="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Profissoes" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Pro_ID" msdata:childkey="SetA_ProID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_RelationVarName="relationCad_Profissoes_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Profissoes" msprop:Generator_ParentPropName="Cad_ProfissoesRow" />
+      <msdata:Relationship name="Cad_Setores_Cad_ProfSetAtuacao_FK" msdata:parent="Cad_Setores" msdata:child="Cad_ProfSetAtuacao" msdata:parentkey="Set_ID" msdata:childkey="SetA_SetID" msprop:Generator_UserChildTable="Cad_ProfSetAtuacao" msprop:Generator_ChildPropName="GetCad_ProfSetAtuacaoRows" msprop:Generator_UserRelationName="Cad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_RelationVarName="relationCad_Setores_Cad_ProfSetAtuacao_FK" msprop:Generator_UserParentTable="Cad_Setores" msprop:Generator_ParentPropName="Cad_SetoresRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

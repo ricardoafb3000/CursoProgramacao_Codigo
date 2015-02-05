@@ -8,6 +8,42 @@ namespace ExemploADO
     public class Profissao : PessoasN.Profissao
     {
 
+        //private new List<Setor> _SetoresAtuacao = null;
+        //public new List<Setor> SetoresAtuacao
+        //{
+        //    get
+        //    {
+        //        if (_SetoresAtuacao == null)
+        //        {
+        //            this._SetoresAtuacao = new List<Setor>();
+
+        //            if (this.ID != 0)
+        //            {
+        //                //Está no banco de dados
+        //                //  procura pelos setores de atuação
+        //                using (dsCadastroDataContext db = new dsCadastroDataContext())
+        //                {
+        //                    var query = from setAtuacao in db.Cad_ProfSetAtuacaos
+        //                                join setores in db.Cad_Setores
+        //                                    on setAtuacao.SetA_SetID equals setores.Set_ID
+        //                                where
+        //                                    setAtuacao.SetA_ProID == this.ID
+        //                                select setores;
+
+        //                    foreach (Cad_Setores setorDoBanco in query)
+        //                    {
+        //                        this._SetoresAtuacao.Add(Setor.ObtemDoDb(setorDoBanco));
+
+        //                    }
+        //                }
+        //            }
+        //        }
+
+        //        return _SetoresAtuacao;
+
+        //    }
+        //}
+
         public override bool Salvar()
         {
             if (base.Validar())
@@ -162,7 +198,7 @@ namespace ExemploADO
             {
                 //Profissão não incluída no Banco de Dados
                 //  Remove da coleção interna
-                SetoresAtuacao.Add(setorParaRemover);
+                SetoresAtuacao.Remove(setorParaRemover);
 
             }
             else
@@ -177,7 +213,6 @@ namespace ExemploADO
             return Erros.Count == 0;
 
         }
-
 
     }
 }
