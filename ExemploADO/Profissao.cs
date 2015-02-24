@@ -8,41 +8,53 @@ namespace ExemploADO
     public class Profissao : PessoasN.Profissao
     {
 
-        //private new List<Setor> _SetoresAtuacao = null;
-        //public new List<Setor> SetoresAtuacao
-        //{
-        //    get
-        //    {
-        //        if (_SetoresAtuacao == null)
-        //        {
-        //            this._SetoresAtuacao = new List<Setor>();
+        private new List<Setor> _SetoresAtuacao = null;
+        public new List<Setor> SetoresAtuacao
+        {
+            get
+            {
+                if (_SetoresAtuacao == null)
+                {
+                    this._SetoresAtuacao = new List<Setor>();
 
-        //            if (this.ID != 0)
-        //            {
-        //                //Está no banco de dados
-        //                //  procura pelos setores de atuação
-        //                using (dsCadastroDataContext db = new dsCadastroDataContext())
-        //                {
-        //                    var query = from setAtuacao in db.Cad_ProfSetAtuacaos
-        //                                join setores in db.Cad_Setores
-        //                                    on setAtuacao.SetA_SetID equals setores.Set_ID
-        //                                where
-        //                                    setAtuacao.SetA_ProID == this.ID
-        //                                select setores;
+                    if (this.ID != 0)
+                    {
+                        //Está no banco de dados
+                        //  procura pelos setores de atuação
+                        using (ExemploADO.dsCadastroTableAdapters.Cad_ProfissoesTableAdapter adapter = new dsCadastroTableAdapters.Cad_ProfissoesTableAdapter())
+                        {
+                            dsCadastro.Cad_ProfissoesDataTable dt = new dsCadastro.Cad_ProfissoesDataTable();
+                            adapter.FillByID(dt, this.ID);
 
-        //                    foreach (Cad_Setores setorDoBanco in query)
-        //                    {
-        //                        this._SetoresAtuacao.Add(Setor.ObtemDoDb(setorDoBanco));
+                            if (dt.Rows.Count > 0)
+                            {
+                                dsCadastro.Cad_ProfissoesRow row = (dsCadastro.Cad_ProfissoesRow) dt.Rows[0];
 
-        //                    }
-        //                }
-        //            }
-        //        }
+                                foreach (dsCadastro.Cad_ProfSetAtuacaoRow setorDoBanco in row.GetCad_ProfSetAtuacaoRows())
+                                {
+                                    dsCadastro.Cad_SetoresRow setorRow = setorDoBanco.Cad_SetoresRow;
 
-        //        return _SetoresAtuacao;
+                                    this._SetoresAtuacao.Add(new Setor()
+                                    {
+                                        ID = setorRow.Set_ID,
+                                        Nome = setorRow.Set_Nome,
+                                        Descricao = setorRow.Set_Descricao,
+                                        DtInclusao = setorRow.Set_DtInc,
+                                        DtAlteracao = setorRow.Set_DtAlt,
+                                        DtExclusao = setorRow.Set_DtExc
 
-        //    }
-        //}
+                                    });
+
+                                }                                
+                            }                            
+                        }
+                    }
+                }
+
+                return _SetoresAtuacao;
+
+            }
+        }
 
         public override bool Salvar()
         {
@@ -189,7 +201,7 @@ namespace ExemploADO
         {
             Erros.Clear();
 
-            PessoasN.Setor setorParaRemover = this.SetoresAtuacao.Where(item => item.ID == SetorID).FirstOrDefault();
+            Setor setorParaRemover = this.SetoresAtuacao.Where(item => item.ID == SetorID).FirstOrDefault();
 
             if (setorParaRemover == null)
                 throw new Exception("Setor de Atuação inexistente para Excluir");
