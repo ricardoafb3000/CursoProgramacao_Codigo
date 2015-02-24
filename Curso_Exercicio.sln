@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploADO", "ExemploADO\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploLinqToSql", "ExemploLinqToSql\ExemploLinqToSql.csproj", "{95B60289-3A4E-4CE0-86AD-C53FB5521EC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploEntity", "ExemploEntity\ExemploEntity.csproj", "{0D04266E-B1BE-4E81-A5B8-F85540D8DA9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{95B60289-3A4E-4CE0-86AD-C53FB5521EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95B60289-3A4E-4CE0-86AD-C53FB5521EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95B60289-3A4E-4CE0-86AD-C53FB5521EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D04266E-B1BE-4E81-A5B8-F85540D8DA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D04266E-B1BE-4E81-A5B8-F85540D8DA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D04266E-B1BE-4E81-A5B8-F85540D8DA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D04266E-B1BE-4E81-A5B8-F85540D8DA9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
