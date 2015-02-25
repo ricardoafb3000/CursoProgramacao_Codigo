@@ -12,17 +12,23 @@ namespace ExemploEntity_Exemplo
         static void Main(string[] args)
         {
 
-            Setor novo = new Setor();
+            Profissao novo = new Profissao();
 
-            novo.Nome = "novo Setor";
+            novo.ID = 1;
+            novo.Nome = "nova Profissão de novo";
+            novo.Descricao = "nova Profissão";
 
-            if (!novo.Salvar())
+            novo.RemoveSetorAtuacao(1);
+
+            if (!novo.Excluir())
             {
                 Console.WriteLine(novo.Erros.Values);
+                Console.Read();
 
             }
 
 
         }
+
     }
 }

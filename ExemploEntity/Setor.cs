@@ -49,7 +49,8 @@ namespace ExemploEntity
             dbItem.Set_ID = this.ID;
             dbItem.Set_Nome = this.Nome;
             dbItem.Set_Descricao = this.Descricao;
-            dbItem.Set_DtInc = this.DtInclusao;
+            if (this.ID == 0)
+                dbItem.Set_DtInc = this.DtInclusao;
             dbItem.Set_DtAlt = this.DtAlteracao;
             dbItem.Set_DtExc = this.DtExclusao;
 
@@ -58,7 +59,7 @@ namespace ExemploEntity
         public static Setor PesquisarPorID(int ID)
         {
 
-            using (db.CadastroContext db = new db.CadastroContext())
+            using (db.CadastroEntities db = new db.CadastroEntities())
             {
                 db.Cad_Setores resposta = db.Cad_Setores.Find(ID);
 
@@ -77,7 +78,7 @@ namespace ExemploEntity
             {
                 base.OnSalvar();
 
-                using (db.CadastroContext db = new db.CadastroContext())
+                using (db.CadastroEntities db = new db.CadastroEntities())
                 {
                     if (ID == 0)
                     {
@@ -130,7 +131,7 @@ namespace ExemploEntity
 
         public override bool Excluir()
         {
-            using (db.CadastroContext db = new db.CadastroContext())
+            using (db.CadastroEntities db = new db.CadastroEntities())
             {
                 //obtém o registro para ser alterado
                 db.Cad_Setores itemSendoExcluido = db.Cad_Setores.Find(this.ID);

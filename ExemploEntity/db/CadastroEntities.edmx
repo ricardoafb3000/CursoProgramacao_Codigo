@@ -76,7 +76,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CursoProgramacaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CadastroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Cad_Profissoes">
           <Key>
             <PropertyRef Name="Pro_ID" />
@@ -85,8 +85,8 @@
           <Property Name="Pro_Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Pro_Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Pro_DtInc" Type="DateTime" Precision="3" />
-          <Property Name="Pro_DtAlt" Type="DateTime" Precision="3" />
-          <Property Name="Pro_DtExc" Type="DateTime" Precision="3" />
+          <Property Name="Pro_DtAlt" Type="DateTime" Precision="3" Nullable="true" />
+          <Property Name="Pro_DtExc" Type="DateTime" Precision="3" Nullable="true" />
           <NavigationProperty Name="Cad_Setores" Relationship="Self.Cad_ProfSetAtuacao" FromRole="Cad_Profissoes" ToRole="Cad_Setores" />
         </EntityType>
         <EntityType Name="Cad_Setores">
@@ -97,16 +97,17 @@
           <Property Name="Set_Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Set_Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Set_DtInc" Type="DateTime" Precision="3" />
-          <Property Name="Set_DtAlt" Type="DateTime" Precision="3" />
-          <Property Name="Set_DtExc" Type="DateTime" Precision="3" />
+          <Property Name="Set_DtAlt" Type="DateTime" Precision="3" Nullable="true" />
+          <Property Name="Set_DtExc" Type="DateTime" Precision="3" Nullable="true" />
+          <NavigationProperty Name="Cad_Profissoes" Relationship="Self.Cad_ProfSetAtuacao" FromRole="Cad_Setores" ToRole="Cad_Profissoes" />
         </EntityType>
         <Association Name="Cad_ProfSetAtuacao">
-          <End Role="Cad_Profissoes" Type="CursoProgramacaoModel.Cad_Profissoes" Multiplicity="*" />
-          <End Role="Cad_Setores" Type="CursoProgramacaoModel.Cad_Setores" Multiplicity="*" />
+          <End Role="Cad_Profissoes" Type="Self.Cad_Profissoes" Multiplicity="*" />
+          <End Role="Cad_Setores" Type="Self.Cad_Setores" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cad_Profissoes" EntityType="CursoProgramacaoModel.Cad_Profissoes" />
-          <EntitySet Name="Cad_Setores" EntityType="CursoProgramacaoModel.Cad_Setores" />
+        <EntityContainer Name="CadastroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cad_Profissoes" EntityType="Self.Cad_Profissoes" />
+          <EntitySet Name="Cad_Setores" EntityType="Self.Cad_Setores" />
           <AssociationSet Name="Cad_ProfSetAtuacao" Association="Self.Cad_ProfSetAtuacao">
             <End Role="Cad_Profissoes" EntitySet="Cad_Profissoes" />
             <End Role="Cad_Setores" EntitySet="Cad_Setores" />
@@ -117,9 +118,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CursoProgramacaoModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="CursoProgramacaoModelStoreContainer" CdmEntityContainer="CadastroEntities">
           <EntitySetMapping Name="Cad_Profissoes">
-            <EntityTypeMapping TypeName="CursoProgramacaoModel.Cad_Profissoes">
+            <EntityTypeMapping TypeName="CadastroModel.Cad_Profissoes">
               <MappingFragment StoreEntitySet="Cad_Profissoes">
                 <ScalarProperty Name="Pro_ID" ColumnName="Pro_ID" />
                 <ScalarProperty Name="Pro_Nome" ColumnName="Pro_Nome" />
@@ -131,7 +132,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Cad_Setores">
-            <EntityTypeMapping TypeName="CursoProgramacaoModel.Cad_Setores">
+            <EntityTypeMapping TypeName="CadastroModel.Cad_Setores">
               <MappingFragment StoreEntitySet="Cad_Setores">
                 <ScalarProperty Name="Set_ID" ColumnName="Set_ID" />
                 <ScalarProperty Name="Set_Nome" ColumnName="Set_Nome" />
@@ -142,7 +143,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Cad_ProfSetAtuacao" TypeName="CursoProgramacaoModel.Cad_ProfSetAtuacao" StoreEntitySet="Cad_ProfSetAtuacao">
+          <AssociationSetMapping Name="Cad_ProfSetAtuacao" TypeName="CadastroModel.Cad_ProfSetAtuacao" StoreEntitySet="Cad_ProfSetAtuacao">
             <EndProperty Name="Cad_Profissoes">
               <ScalarProperty Name="Pro_ID" ColumnName="SetA_ProID" />
             </EndProperty>

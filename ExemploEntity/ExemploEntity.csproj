@@ -48,28 +48,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db\CadastroContext.cs" />
-    <Compile Include="db\CadastroModel.Context.cs">
+    <Compile Include="db\CadastroEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CadastroModel.Context.tt</DependentUpon>
+      <DependentUpon>CadastroEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\CadastroModel.cs">
+    <Compile Include="db\CadastroEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CadastroModel.tt</DependentUpon>
+      <DependentUpon>CadastroEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="db\CadastroModel.Designer.cs">
+    <Compile Include="db\CadastroEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CadastroModel.edmx</DependentUpon>
+      <DependentUpon>CadastroEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="db\Cad_Profissoes.cs">
-      <DependentUpon>CadastroModel.tt</DependentUpon>
+      <DependentUpon>CadastroEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="db\Cad_Setores.cs">
-      <DependentUpon>CadastroModel.tt</DependentUpon>
+      <DependentUpon>CadastroEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Profissao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setor.cs" />
   </ItemGroup>
@@ -78,22 +78,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="db\CadastroModel.edmx">
+    <EntityDeploy Include="db\CadastroEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CadastroModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CadastroEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="db\CadastroModel.Context.tt">
+    <None Include="db\CadastroEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CadastroModel.edmx</DependentUpon>
-      <LastGenOutput>CadastroModel.Context.cs</LastGenOutput>
+      <DependentUpon>CadastroEntities.edmx</DependentUpon>
+      <LastGenOutput>CadastroEntities.Context.cs</LastGenOutput>
     </None>
-    <None Include="db\CadastroModel.edmx.diagram">
-      <DependentUpon>CadastroModel.edmx</DependentUpon>
+    <None Include="db\CadastroEntities.edmx.diagram">
+      <DependentUpon>CadastroEntities.edmx</DependentUpon>
     </None>
-    <None Include="db\CadastroModel.tt">
+    <None Include="db\CadastroEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CadastroModel.edmx</DependentUpon>
-      <LastGenOutput>CadastroModel.cs</LastGenOutput>
+      <DependentUpon>CadastroEntities.edmx</DependentUpon>
+      <LastGenOutput>CadastroEntities.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

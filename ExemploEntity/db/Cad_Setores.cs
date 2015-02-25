@@ -14,11 +14,18 @@ namespace ExemploEntity.db
     
     public partial class Cad_Setores
     {
+        public Cad_Setores()
+        {
+            this.Cad_Profissoes = new HashSet<Cad_Profissoes>();
+        }
+    
         public int Set_ID { get; set; }
         public string Set_Nome { get; set; }
         public string Set_Descricao { get; set; }
         public Nullable<System.DateTime> Set_DtInc { get; set; }
         public Nullable<System.DateTime> Set_DtAlt { get; set; }
         public Nullable<System.DateTime> Set_DtExc { get; set; }
+    
+        public virtual ICollection<Cad_Profissoes> Cad_Profissoes { get; set; }
     }
 }
