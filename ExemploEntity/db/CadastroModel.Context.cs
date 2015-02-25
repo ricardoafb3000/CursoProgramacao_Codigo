@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExemploEntity
+namespace ExemploEntity.db
 {
     using System;
     using System.Data.Entity;
@@ -25,7 +25,7 @@ namespace ExemploEntity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Profissao> Cad_Profissoes { get; set; }
-        public virtual DbSet<Setor> Cad_Setores { get; set; }
+        public virtual DbSet<Cad_Profissoes> Cad_Profissoes { get; set; }
+        public virtual DbSet<Cad_Setores> Cad_Setores { get; set; }
     }
 }

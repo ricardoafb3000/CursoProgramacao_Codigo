@@ -48,52 +48,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastroModel.Context.cs">
+    <Compile Include="db\CadastroContext.cs" />
+    <Compile Include="db\CadastroModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CadastroModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CadastroModel.cs">
+    <Compile Include="db\CadastroModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CadastroModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CadastroModel.Designer.cs">
+    <Compile Include="db\CadastroModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CadastroModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Profissao.cs">
+    <Compile Include="db\Cad_Profissoes.cs">
+      <DependentUpon>CadastroModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="db\Cad_Setores.cs">
       <DependentUpon>CadastroModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setor.cs">
-      <DependentUpon>CadastroModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Setor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="CadastroModel.edmx">
+    <EntityDeploy Include="db\CadastroModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CadastroModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CadastroModel.Context.tt">
+    <None Include="db\CadastroModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CadastroModel.edmx</DependentUpon>
       <LastGenOutput>CadastroModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="CadastroModel.edmx.diagram">
+    <None Include="db\CadastroModel.edmx.diagram">
       <DependentUpon>CadastroModel.edmx</DependentUpon>
     </None>
-    <None Include="CadastroModel.tt">
+    <None Include="db\CadastroModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CadastroModel.edmx</DependentUpon>
       <LastGenOutput>CadastroModel.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PessoasN\PessoasN.csproj">
+      <Project>{33656f21-3fda-4be2-bd29-c8d818d0db52}</Project>
+      <Name>PessoasN</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
