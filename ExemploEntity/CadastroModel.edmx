@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CursoProgramacaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cad_Profissoes">
+          <Key>
+            <PropertyRef Name="Pro_ID" />
+          </Key>
+          <Property Name="Pro_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pro_Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Pro_Descricao" Type="varchar" MaxLength="300" />
+          <Property Name="Pro_DtInc" Type="datetime" />
+          <Property Name="Pro_DtAlt" Type="datetime" />
+          <Property Name="Pro_DtExc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Cad_ProfSetAtuacao">
+          <Key>
+            <PropertyRef Name="SetA_ProID" />
+            <PropertyRef Name="SetA_SetID" />
+          </Key>
+          <Property Name="SetA_ProID" Type="int" Nullable="false" />
+          <Property Name="SetA_SetID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cad_Setores">
+          <Key>
+            <PropertyRef Name="Set_ID" />
+          </Key>
+          <Property Name="Set_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Set_Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Set_Descricao" Type="varchar" MaxLength="300" />
+          <Property Name="Set_DtInc" Type="datetime" />
+          <Property Name="Set_DtAlt" Type="datetime" />
+          <Property Name="Set_DtExc" Type="datetime" />
+        </EntityType>
+        <Association Name="Cad_Profissoes_Cad_ProfSetAtuacao_FK">
+          <End Role="Cad_Profissoes" Type="Self.Cad_Profissoes" Multiplicity="1" />
+          <End Role="Cad_ProfSetAtuacao" Type="Self.Cad_ProfSetAtuacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Profissoes">
+              <PropertyRef Name="Pro_ID" />
+            </Principal>
+            <Dependent Role="Cad_ProfSetAtuacao">
+              <PropertyRef Name="SetA_ProID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cad_Setores_Cad_ProfSetAtuacao_FK">
+          <End Role="Cad_Setores" Type="Self.Cad_Setores" Multiplicity="1" />
+          <End Role="Cad_ProfSetAtuacao" Type="Self.Cad_ProfSetAtuacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cad_Setores">
+              <PropertyRef Name="Set_ID" />
+            </Principal>
+            <Dependent Role="Cad_ProfSetAtuacao">
+              <PropertyRef Name="SetA_SetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CursoProgramacaoModelStoreContainer">
+          <EntitySet Name="Cad_Profissoes" EntityType="Self.Cad_Profissoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cad_ProfSetAtuacao" EntityType="Self.Cad_ProfSetAtuacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cad_Setores" EntityType="Self.Cad_Setores" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Cad_Profissoes_Cad_ProfSetAtuacao_FK" Association="Self.Cad_Profissoes_Cad_ProfSetAtuacao_FK">
+            <End Role="Cad_Profissoes" EntitySet="Cad_Profissoes" />
+            <End Role="Cad_ProfSetAtuacao" EntitySet="Cad_ProfSetAtuacao" />
+          </AssociationSet>
+          <AssociationSet Name="Cad_Setores_Cad_ProfSetAtuacao_FK" Association="Self.Cad_Setores_Cad_ProfSetAtuacao_FK">
+            <End Role="Cad_Setores" EntitySet="Cad_Setores" />
+            <End Role="Cad_ProfSetAtuacao" EntitySet="Cad_ProfSetAtuacao" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CursoProgramacaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Profissao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DtInclusao" Type="DateTime" Precision="3" />
+          <Property Name="DtAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="DtExclusao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Cad_Setores" Relationship="Self.Cad_ProfSetAtuacao" FromRole="Cad_Profissoes" ToRole="Cad_Setores" />
+        </EntityType>
+        <EntityType Name="Setor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DtInclusao" Type="DateTime" Precision="3" />
+          <Property Name="DtAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="DtExclusao" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="Cad_ProfSetAtuacao">
+          <End Role="Cad_Profissoes" Type="CursoProgramacaoModel.Profissao" Multiplicity="*" />
+          <End Role="Cad_Setores" Type="CursoProgramacaoModel.Setor" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cad_Profissoes" EntityType="CursoProgramacaoModel.Profissao" />
+          <EntitySet Name="Cad_Setores" EntityType="CursoProgramacaoModel.Setor" />
+          <AssociationSet Name="Cad_ProfSetAtuacao" Association="Self.Cad_ProfSetAtuacao">
+            <End Role="Cad_Profissoes" EntitySet="Cad_Profissoes" />
+            <End Role="Cad_Setores" EntitySet="Cad_Setores" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CursoProgramacaoModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Cad_Profissoes">
+            <EntityTypeMapping TypeName="CursoProgramacaoModel.Profissao">
+              <MappingFragment StoreEntitySet="Cad_Profissoes">
+                <ScalarProperty Name="ID" ColumnName="Pro_ID" />
+                <ScalarProperty Name="Nome" ColumnName="Pro_Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Pro_Descricao" />
+                <ScalarProperty Name="DtInclusao" ColumnName="Pro_DtInc" />
+                <ScalarProperty Name="DtAlteracao" ColumnName="Pro_DtAlt" />
+                <ScalarProperty Name="DtExclusao" ColumnName="Pro_DtExc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cad_Setores">
+            <EntityTypeMapping TypeName="CursoProgramacaoModel.Setor">
+              <MappingFragment StoreEntitySet="Cad_Setores">
+                <ScalarProperty Name="ID" ColumnName="Set_ID" />
+                <ScalarProperty Name="Nome" ColumnName="Set_Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Set_Descricao" />
+                <ScalarProperty Name="DtInclusao" ColumnName="Set_DtInc" />
+                <ScalarProperty Name="DtAlteracao" ColumnName="Set_DtAlt" />
+                <ScalarProperty Name="DtExclusao" ColumnName="Set_DtExc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Cad_ProfSetAtuacao" TypeName="CursoProgramacaoModel.Cad_ProfSetAtuacao" StoreEntitySet="Cad_ProfSetAtuacao">
+            <EndProperty Name="Cad_Profissoes">
+              <ScalarProperty Name="ID" ColumnName="SetA_ProID" />
+            </EndProperty>
+            <EndProperty Name="Cad_Setores">
+              <ScalarProperty Name="ID" ColumnName="SetA_SetID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
