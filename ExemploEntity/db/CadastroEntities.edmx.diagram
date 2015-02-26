@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="d562b60ae0b847f39a5e422397e5db97" Name="Diagram1">
         <EntityTypeShape EntityType="CadastroModel.Cad_Profissoes" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="CadastroModel.Cad_Setores" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CadastroModel.Cad_Setores" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="CadastroModel.Cad_ProfSetAtuacao" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
