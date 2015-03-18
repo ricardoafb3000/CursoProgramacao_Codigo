@@ -16,7 +16,7 @@ namespace PessoasN
         }
         
         public DateTime DtInclusao { get; set; }
-        public DateTime? DtAlteracao { get; set; }
+        public DateTime DtAlteracao { get; set; }
         public DateTime? DtExclusao { get; set; }
 
         public abstract bool Salvar();

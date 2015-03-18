@@ -1,0 +1,58 @@
+﻿@model ExemploAspNetMvc.Models.Cad_Profissoes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cad_Profissoes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pro_Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pro_Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pro_Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pro_Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pro_DtInc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pro_DtInc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pro_DtAlt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pro_DtAlt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pro_DtExc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pro_DtExc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Pro_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
