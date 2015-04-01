@@ -5,15 +5,16 @@ namespace ExemploAspNetMvc.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Cadastro : DbContext
+    public partial class CadastroDbContext : DbContext
     {
-        public Cadastro()
-            : base("name=Cadastro")
+        public CadastroDbContext()
+            : base("CadastroContext")
         {
         }
 
         public virtual DbSet<Cad_Profissoes> Cad_Profissoes { get; set; }
         public virtual DbSet<Cad_Setores> Cad_Setores { get; set; }
+        public virtual DbSet<PessoaFisica> PessoasFisicas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

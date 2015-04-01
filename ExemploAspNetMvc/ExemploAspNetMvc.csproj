@@ -120,13 +120,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PessoaFisicaController.cs" />
     <Compile Include="Controllers\ProfissoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cadastro.cs" />
+    <Compile Include="Models\CadastroDbInitializer.cs" />
+    <Compile Include="Models\CadastroDbContext.cs" />
     <Compile Include="Models\Cad_Profissoes.cs" />
     <Compile Include="Models\Cad_Setores.cs" />
+    <Compile Include="Models\CustomValidations\CPF.cs" />
+    <Compile Include="Models\PessoaFisica.cs" />
+    <Compile Include="Models\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +144,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\CustomValidations.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -170,6 +176,11 @@
     <Content Include="Views\Profissoes\Details.cshtml" />
     <Content Include="Views\Profissoes\Edit.cshtml" />
     <Content Include="Views\Profissoes\Index.cshtml" />
+    <Content Include="Views\PessoaFisica\Create.cshtml" />
+    <Content Include="Views\PessoaFisica\Delete.cshtml" />
+    <Content Include="Views\PessoaFisica\Details.cshtml" />
+    <Content Include="Views\PessoaFisica\Edit.cshtml" />
+    <Content Include="Views\PessoaFisica\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

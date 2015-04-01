@@ -10,112 +10,107 @@ using ExemploAspNetMvc.Models;
 
 namespace ExemploAspNetMvc.Controllers
 {
-    public class ProfissoesController : Controller
+    public class PessoaFisicaController : Controller
     {
         private CadastroDbContext db = new CadastroDbContext();
 
-        // GET: Profissoes
+        // GET: PessoaFisica
         public ActionResult Index()
         {
-            return View(db.Cad_Profissoes.ToList());
+            return View(db.PessoasFisicas.ToList());
         }
 
-        // GET: Profissoes/Details/5
+        // GET: PessoaFisica/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cad_Profissoes cad_Profissoes = db.Cad_Profissoes.Find(id);
-            if (cad_Profissoes == null)
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            if (pessoaFisica == null)
             {
                 return HttpNotFound();
             }
-            return View(cad_Profissoes);
+            return View(pessoaFisica);
         }
 
-        // GET: Profissoes/Create
+        // GET: PessoaFisica/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Profissoes/Create
+        // POST: PessoaFisica/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Pro_ID,Pro_Nome,Pro_Descricao")] Cad_Profissoes cad_Profissoes)
+        public ActionResult Create([Bind(Include = "ID,CPF,Nome")] PessoaFisica pessoaFisica)
         {
             if (ModelState.IsValid)
             {
-                cad_Profissoes.Pro_DtInc = DateTime.Now;
-                cad_Profissoes.Pro_DtAlt = DateTime.Now;
-
-                db.Cad_Profissoes.Add(cad_Profissoes);
+                db.PessoasFisicas.Add(pessoaFisica);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(cad_Profissoes);
+            return View(pessoaFisica);
         }
 
-        // GET: Profissoes/Edit/5
+        // GET: PessoaFisica/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cad_Profissoes cad_Profissoes = db.Cad_Profissoes.Find(id);
-            if (cad_Profissoes == null)
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            if (pessoaFisica == null)
             {
                 return HttpNotFound();
             }
-            return View(cad_Profissoes);
+            return View(pessoaFisica);
         }
 
-        // POST: Profissoes/Edit/5
+        // POST: PessoaFisica/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Pro_ID,Pro_Nome,Pro_Descricao,Pro_DtInc")] Cad_Profissoes cad_Profissoes)
+        public ActionResult Edit([Bind(Include = "ID,CPF,Nome")] PessoaFisica pessoaFisica)
         {
             if (ModelState.IsValid)
             {
-                cad_Profissoes.Pro_DtAlt = DateTime.Now;
-
-                db.Entry(cad_Profissoes).State = EntityState.Modified;
+                db.Entry(pessoaFisica).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cad_Profissoes);
+            return View(pessoaFisica);
         }
 
-        // GET: Profissoes/Delete/5
+        // GET: PessoaFisica/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cad_Profissoes cad_Profissoes = db.Cad_Profissoes.Find(id);
-            if (cad_Profissoes == null)
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            if (pessoaFisica == null)
             {
                 return HttpNotFound();
             }
-            return View(cad_Profissoes);
+            return View(pessoaFisica);
         }
 
-        // POST: Profissoes/Delete/5
+        // POST: PessoaFisica/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Cad_Profissoes cad_Profissoes = db.Cad_Profissoes.Find(id);
-            db.Cad_Profissoes.Remove(cad_Profissoes);
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            db.PessoasFisicas.Remove(pessoaFisica);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
